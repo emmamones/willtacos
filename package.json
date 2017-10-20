@@ -1,0 +1,19 @@
+{
+  "name": "willtacos",
+  "version": "1.0.0",
+  "description": "this is a demo site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramomex1/willtacos.git"
+  },
+  "author": "emmanuel lohora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramomex1/willtacos/issues"
+  },
+  "homepage": "https://github.com/ramomex1/willtacos#readme"
+}
