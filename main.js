@@ -10,8 +10,8 @@ var app = angular.module('codecraft', [
 ]);
 
 app.config(function ($httpProvider, $resourceProvider, laddaProvider, $datepickerProvider) {
-	$httpProvider.defaults.headers.common['Authorization'] = 'Token 20002cd74d5ce124ae219e739e18956614aab490';
-	$resourceProvider.defaults.stripTrailingSlashes = false;
+	// $httpProvider.defaults.headers.common['Authorization'] = 'Token 20002cd74d5ce124ae219e739e18956614aab490';
+	// $resourceProvider.defaults.stripTrailingSlashes = false;
 	laddaProvider.setOption({
 		style: 'expand-right'
 	});
@@ -22,11 +22,7 @@ app.config(function ($httpProvider, $resourceProvider, laddaProvider, $datepicke
 });
 
 app.factory("Contact", function ($resource) {
-	return $resource("https://codecraftpro.com/api/samples/v1/contact/:id/", {id: '@id'}, {
-		update: {
-			method: 'PUT'
-		}
-	});
+	return {};
 });
 
 app.controller('PersonDetailController', function ($scope, ContactService) {
@@ -43,7 +39,7 @@ app.controller('PersonDetailController', function ($scope, ContactService) {
 });
 
 app.controller('PersonListController', function ($scope, $modal, ContactService) {
-
+	$scope.isLoading=false;
 	$scope.search = "";
 	$scope.order = "email";
 	$scope.contacts = ContactService;
@@ -122,17 +118,17 @@ app.service('ContactService', function (Contact, $q, toaster) {
 					'ordering': self.ordering
 				};
 
-				Contact.get(params, function (data) {
-					console.log(data);
-					angular.forEach(data.results, function (person) {
-						self.persons.push(new Contact(person));
-					});
+				// Contact.get(params, function (data) {
+				// 	console.log(data);
+				// 	angular.forEach(data.results, function (person) {
+				// 		self.persons.push(new Contact(person));
+				// 	});
 
-					if (!data.next) {
-						self.hasMore = false;
-					}
-					self.isLoading = false;
-				});
+				// 	if (!data.next) {
+				// 		self.hasMore = false;
+				// 	}
+				// 	self.isLoading = false;
+				// });
 			}
 
 		},
@@ -163,17 +159,17 @@ app.service('ContactService', function (Contact, $q, toaster) {
 		'createContact': function (person) {
 			var d = $q.defer();
 			self.isSaving = true;
-			Contact.save(person).$promise.then(function () {
-				self.isSaving = false;
-				self.selectedPerson = null;
-				self.hasMore = true;
-				self.page = 1;
-				self.persons = [];
-				self.loadContacts();
-				toaster.pop('success', 'Created ' + person.name);
-				d.resolve()
-			});
-			return d.promise;
+			// Contact.save(person).$promise.then(function () {
+			// 	self.isSaving = false;
+			// 	self.selectedPerson = null;
+			// 	self.hasMore = true;
+			// 	self.page = 1;
+			// 	self.persons = [];
+			// 	self.loadContacts();
+			// 	toaster.pop('success', 'Created ' + person.name);
+			// 	d.resolve()
+			// });
+			return d.resolve;
 		}
 
 
