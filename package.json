@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ramomex1/willtacos/issues"
   },
-  "homepage": "https://github.com/ramomex1/willtacos#readme"
+  "homepage": "https://github.com/ramomex1/willtacos#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
