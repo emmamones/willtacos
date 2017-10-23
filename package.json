@@ -1,7 +1,7 @@
 {
   "name": "willtacos",
   "version": "1.0.0",
-  "description": "simple repo to learn visual code and azure",
+  "description": "http://codecraftpro.com",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
