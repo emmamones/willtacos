@@ -1,146 +1,223 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="codecraft">
+<!DOCTYPE HTML>
+<!--
+	Snapshot by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
 
 <head>
-	<title>Contacts</title>
-	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="paper.css" rel="stylesheet">
-	<link href="libs/bootstrap-additions/dist/bootstrap-additions.min.css" rel="stylesheet">
-	<link href="libs/angularjs-toaster/toaster.min.css" rel="stylesheet">
-	<link href="libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
-	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="main.css" rel="stylesheet">
+	<title>Vamonos Tacos</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
+	<div class="page-wrap">
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Contacts
-				</a>
-			</div>
-		</div>
-	</nav>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li>
+					<a href="index.html" class="active">
+						<span class="icon fa-home"></span>
+					</a>
+				</li>
+				<li>
+					<a href="gallery.html">
+						<span class="icon fa-camera-retro"></span>
+					</a>
+				</li>
+				<li>
+					<a href="generic.html">
+						<span class="icon fa-file-text-o"></span>
+					</a>
+				</li>
+			</ul>
+		</nav>
 
-	<div class="container main-content">
+		<!-- Main -->
+		<section id="main">
 
-		<toaster-container></toaster-container>
+			<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>Will Tacos</h1>
+					<p>si Senor</p>
+					<ul class="actions">
+						<li>
+							<a href="#projects" class="button alt scrolly big">Continue</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section id="projects">
 
-		<div class="row">
-			<div class="col-md-8" ng-controller="PersonListController">
-				<div class="row">
-					<div class="col-md-12">
-						<form class="form-inline well well-sm">
-							<span class="fa fa-search"></span>
-
-							<div class="form-group">
-								<input type="text" class="form-control" id="name" ng-model="search" placeholder="Search name..." />
-							</div>
-
-							<span class="fa fa-sort"></span>
-
-							<div class="form-group">
-								<select class="form-control" ng-model="order">
-									<option value="name">Name (ASC)</option>
-									<option value="-name">Name (DEC)</option>
-									<option value="email">Email (ASC)</option>
-									<option value="-email">Email (DEC)</option>
-								</select>
-							</div>
-
-							<button class="btn btn-primary pull-right" ng-click="showCreateModal()">Create
-							</button>
-
-						</form>
-
-						<table class="table table-bordered" infinite-scroll="loadMore()" infinite-scroll-immediate-check="false" infinite-scroll-distance="1">
-
-							<tr>
-								<th class="col-1">#</th>
-								<th class="col-2">
-									<div class="sortables">
-										<span ng-click="order = 'name'" class="fa fa-sort-asc"></span>
-										<span ng-click="order = '-name'" class="fa fa-sort-desc"></span>
-									</div>
-									Name
-								</th>
-								<th class="col-3">
-									<div class="sortables">
-										<span ng-click="order = 'email'" class="fa fa-sort-asc"></span>
-										<span ng-click="order = '-email'" class="fa fa-sort-desc"></span>
-									</div>
-									Email
-								</th>
-								<th class="col-4">Phone</th>
-							</tr>
-
-							<tr ng-repeat="person in contacts.persons" ng-style="{
-							 'background-color': person.email == contacts.selectedPerson.email ? 'lightgray' : ''
-						}" ng-click="contacts.selectedPerson = person">
-								<td>
-									<img ng-src="{{person.photo}}" class="img-circle profile-photo" alt="" />
-								</td>
-								<td>{{ person.name }}</td>
-								<td>{{ person.email }}</td>
-								<td>{{ person.phonenumber }}</td>
-							</tr>
-
-
-						</table>
-
-						<div ng-show="contacts.persons.length == 0 && !contacts.isLoading">
-							<div class="alert alert-info">
-								<p class="text-center">No results found for search term {{search}}</p>
-							</div>
+				<div class="projects">
+					<header class="special">
+						<h2>current exercises</h2>
+					</header>
+					<div class="content">
+						<div id="section1">
+							<a href="section1/lesson1/index.html">lesson1</a>
+							<a href="section1/lesson2/index.html">lesson2</a>
+							<a href="section1/lesson3/index.html">lesson3</a>
+							<a href="section1/lesson4/index.html">lesson4</a>
+							<a href="section1/lesson5/index.html">lesson5</a>
+							<a href="section1/lesson6/index.html">lesson6</a>
+							<a href="section1/lesson7/index.html">lesson7</a>
+							<a href="section1/completed/index.html">completed</a>
 						</div>
-
-						<div class="spinner" ng-show="contacts.isLoading">
-							<span us-spinner="{radius:8, width:5, length: 3, lines:9}"></span>
-
-							<p>Loading...</p>
+						<div id="section2">
+							<a href="section2/lesson1/index.html">lesson1</a>
+							<a href="section2/lesson2/index.html">lesson2</a>
+							<a href="section2/lesson3/index.html">lesson3</a>
+							<a href="section2/lesson4/index.html">lesson4</a>
+							<a href="section2/lesson5/index.html">lesson5</a>
+							<a href="section2/lesson6/index.html">lesson5</a>
+							<a href="section2/lesson7/index.html">lesson5</a>
+							<a href="section2/completed/index.html">completed</a>
 						</div>
-
+						<div id="section7">
+							<a href="section7/index.html">lesson1</a>
+						</div>
 					</div>
+					<footer>
+						<a href="gallery.html" class="button big">Full Gallery</a>
+					</footer>
+				</div>
+			</section>
+			<!-- Gallery -->
+			<section id="galleries">
+
+				<!-- Photo Galleries -->
+				<div class="gallery">
+					<header class="special">
+						<h2>What's New</h2>
+					</header>
+					<div class="content">
+						<div class="media">
+							<a href="images/fulls/01.jpg">
+								<img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/05.jpg">
+								<img src="images/thumbs/05.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/09.jpg">
+								<img src="images/thumbs/09.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/02.jpg">
+								<img src="images/thumbs/02.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/06.jpg">
+								<img src="images/thumbs/06.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/10.jpg">
+								<img src="images/thumbs/10.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/03.jpg">
+								<img src="images/thumbs/03.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+						<div class="media">
+							<a href="images/fulls/07.jpg">
+								<img src="images/thumbs/07.jpg" alt="" title="This right here is a caption." />
+							</a>
+						</div>
+					</div>
+					<footer>
+						<a href="gallery.html" class="button big">Full Gallery</a>
+					</footer>
+				</div>
+			</section>
+
+			<!-- Contact -->
+			<section id="contact">
+				<!-- Social -->
+				<div class="social column">
+					<h3>About Me</h3>
+					<p>My principal interest to archive its the Human Computers Interaction in order to understand and create friendly and
+						useful applications, to help humans cover their needs..</p>
+					<p>This is just a website for my testing and learning purposes.</p>
+					<h3>Follow Me</h3>
+					<ul class="icons">
+						<li>
+							<a href="#" class="icon fa-twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="icon fa-facebook">
+								<span class="label">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="icon fa-instagram">
+								<span class="label">Instagram</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 
-			</div>
-			<div class="col-md-4" ng-controller="PersonDetailController">
-
-				<div class="panel panel-default">
-					<div class="panel-heading">Details
-
-						<button class="btn btn-danger btn-sm pull-right" ladda="contacts.isDeleting" ng-click="remove()">Delete
-						</button>
-						<div class="clearfix"></div>
-
-					</div>
-					<div class="panel-body">
-						<form class="form-horizontal" ng-submit="save()" novalidate>
-
-							<ng-include src="'templates/form.html'"></ng-include>
-
-						</form>
-					</div>
+				<!-- Form -->
+				<div class="column">
+					<h3>In Kontakt bleiben</h3>
+					<form action="#" method="post">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li>
+								<input value="Send Message" class="button" type="submit">
+							</li>
+						</ul>
+					</form>
 				</div>
-			</div>
-		</div>
+
+			</section>
+
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy; Untitled Design:
+					<a href="https://templated.co/">TEMPLATED</a>. Images:
+					<a href="https://unsplash.com/">Unsplash</a>.
+				</div>
+			</footer>
+		</section>
 	</div>
 
+	<!-- Scripts -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/jquery.poptrox/jquery.poptrox.min.js"></script>
+	<script src="libs/jquery.scrolly/dist/jquery.scrolly.min.js"></script>
+	<script src="libs/skel/dist/dist/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-resource/angular-resource.min.js"></script>
-	<script src="libs/angular-animate/angular-animate.min.js"></script>
-	<script src="libs/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
-	<script src="libs/spin.js/spin.js"></script>
-	<script src="libs/angular-spinner/angular-spinner.min.js"></script>
-	<script src="libs/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
-	<script src="libs/ladda/dist/ladda.min.js"></script>
-	<script src="libs/angular-ladda/dist/angular-ladda.min.js"></script>
-	<script src="libs/angular-strap/dist/angular-strap.min.js"></script>
-	<script src="libs/angular-strap/dist/angular-strap.tpl.min.js"></script>
-	<script src="libs/angularjs-toaster/toaster.min.js"></script>
-	<script src="main.js"></script>
 </body>
 
 </html>

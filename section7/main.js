@@ -970,7 +970,7 @@ app.controller("PersonListController", function(
     $scope.contacts.selectedPerson = {};
     $scope.createModal = $modal({
       scope: $scope,
-      template: "templates/modal.create.tpl.html",
+      template: "../templates/modal.create.tpl.html",
       show: true
     });
   };

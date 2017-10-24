@@ -1,0 +1,5 @@
+- Install node.js
+- create folder
+- use npm install express
+- create server.js, make it use the folder and file you want to serve as start point.
+- creat html file

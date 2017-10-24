@@ -1,0 +1,44 @@
+{
+  "name": "jquery.scroolly",
+  "version": "0.0.1",
+  "homepage": "https://github.com/chayka/jQuery.Scroolly",
+  "authors": [
+    "Boris Mossounov <borix@tut.by>"
+  ],
+  "description": "Scroolly is a handy jQuery plugin that simplifies greatly scroll-effects scripting.",
+  "main": "dist/jquery.scroolly.min.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "scroolly",
+    "scroll",
+    "scroll-effect",
+    "parallax",
+    "sticky",
+    "jquery"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.6"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "wiki",
+    "demo"
+  ],
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "cd9422569b94470f5def0e4039de76255cc9f3de"
+  },
+  "_source": "https://github.com/chayka/jQuery.Scroolly.git",
+  "_target": "^0.0.1",
+  "_originalSource": "jquery.scroolly",
+  "_direct": true
+}

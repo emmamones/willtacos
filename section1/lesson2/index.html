@@ -1,0 +1,89 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="minmax">
+
+<head>
+	<title>Controllers</title>
+	<link href="../../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+	<link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Controllers
+			</a >
+		</div >
+		,
+	</div >
+</nav >
+
+<div class="container main-content"  ng-controller="MinMaxCtrl">
+
+<!--this is html5 form validation-->
+	<form novalidate="novalidate" ng-submit="onSubmit()" name="editForm">
+		<div class="form-group" >
+			<label for="name" >Name</label >
+			<input type="text"
+			       class="form-control"
+			       ng-model="formData.name"
+			       id="name" >
+		</div > 
+		<div class="form-group" >
+			<label for="email" class="control-label">Email</label >
+			<input type="email" name="email"
+			       class="form-control"
+			       ng-model="formData.email"
+			       id="email" required="required">		 
+		    <pre>email error: {{editForm.$error | json}}</pre>
+		    <pre>email error: {{editForm.email.$error | json}}</pre>
+			<pre>email Valid {{editForm.email.$valid}}</pre>
+		</div > 
+
+	<div class="form-group">
+	<label for="username"  class="control-label">Username </label >
+	<input type="text"    class="form-control"ng-model="formData.userName" id="username" name="username" required="required" ng-minlength="7" ng-pattern="/^[A-Za-z0-9_]{1,15}$/" ng-pattern-err-type="badUserName" > 	 
+	</div>
+	
+	<div class="form-group" >
+			<label for="age" class="control-label" >Age</label >
+			<input type="number"  class="form-control" ng-model="formData.age" id="age" name="age" required="required" min="18" max="64" ng-min-err-type="tooYoung" >
+	</div >
+
+	<div class="form-group" >
+    <label for="sex"></label>
+	<select class="form-control" ng-model="formData.sex"  id="sex" name="sex" required="required" >
+		<option value="">Please Choose</option>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+    </div>
+
+		<div class="form-group" >
+			<label for="password" >Password</label >
+			<input type="password" class="form-control" ng-model="formData.password"   id="password"  name="password" required="required" ng-minlength="10" >
+		</div >
+
+		<div class="form-group" >
+          <button class="btn btn-primary" >Register	</button >
+		<button class="btn btn-primary"  ladda="submitting" data-style="expand-right" type="submit" >
+			<span ng-show="submitting">Registering</span>
+			<span ng-show="!submitting">Register</span>
+			</button >
+		</div >
+	</form > 
+
+  <pre>{{editForm | json}} </pre>
+</div >
+
+<script src="../../libs/angular/angular.min.js"></script >
+<script src="../../libs/angular-auto-validate/dist/jcs-auto-validate.min.js"></script >
+<script src="../../libs/ladda/dist/spin.min.js"></script >
+<script src="../../libs/ladda/dist/ladda.min.js"></script >
+<script src="../../libs/angular-ladda/dist/angular-ladda.min.js"></script >
+
+<script src="main.js" ></script > 
+</body >
+</html >
